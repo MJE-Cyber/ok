@@ -1,143 +1,27 @@
-/* Reset browser styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+/* Add this to your existing CSS */
+#cursor-effect {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    background: radial-gradient(circle, rgba(255, 87, 51, 0.8), rgba(255, 87, 51, 0.4));
+    border-radius: 50%;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    animation: pulse 2s infinite;
+    z-index: 1000;
 }
 
-body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-    background-color: #f0f1f6;
-    color: #333;
-    line-height: 1.6;
-}
-
-/* Header Styles */
-header {
-    background-color: #343a40;
-    color: #fff;
-    padding: 100px 20px;
-    text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
-    text-transform: uppercase;
-    font-weight: 700;
-}
-
-header p {
-    font-size: 1.3rem;
-    color: #b3b8b9;
-}
-
-/* About Section Styles */
-#about {
-    padding: 60px 20px;
-    text-align: center;
-    background-color: #fff;
-    margin-top: 40px;
-    border-radius: 8px;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
-}
-
-#about h2 {
-    font-size: 2.5rem;
-    margin-bottom: 20px;
-    color: #343a40;
-}
-
-#about p {
-    font-size: 1.1rem;
-    color: #666;
-    line-height: 1.8;
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* Social Media Links Section */
-#social {
-    background-color: #007bff;
-    color: #fff;
-    padding: 50px 20px;
-    text-align: center;
-}
-
-#social h2 {
-    font-size: 2.5rem;
-    margin-bottom: 30px;
-}
-
-#social ul {
-    list-style-type: none;
-    padding: 0;
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-}
-
-#social li {
-    display: inline-block;
-}
-
-#social a {
-    text-decoration: none;
-    font-size: 1.2rem;
-    color: #007bff;
-    background-color: white;
-    padding: 15px 30px;
-    border-radius: 30px;
-    border: 2px solid #007bff;
-    transition: all 0.4s ease;
-}
-
-#social a:hover {
-    background-color: #fff;
-    color: #007bff;
-    transform: translateY(-5px);
-}
-
-/* Footer Styles */
-footer {
-    background-color: #343a40;
-    color: #fff;
-    text-align: center;
-    padding: 20px;
-    font-size: 1rem;
-    margin-top: 50px;
-}
-
-/* Mobile-Friendly Styles */
-@media (max-width: 768px) {
-    header h1 {
-        font-size: 2.5rem;
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
     }
-
-    header p {
-        font-size: 1.1rem;
+    50% {
+        transform: translate(-50%, -50%) scale(1.2);
+        opacity: 0.5;
     }
-
-    #about h2 {
-        font-size: 2rem;
-    }
-
-    #about p {
-        font-size: 1rem;
-    }
-
-    #social ul {
-        flex-direction: column;
-        gap: 20px;
-    }
-
-    #social li {
-        display: block;
-        width: 100%;
-        text-align: center;
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 0.8;
     }
 }
